@@ -24,3 +24,6 @@ yafia-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Ignore Python files
+**/*.py
