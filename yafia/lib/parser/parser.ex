@@ -19,7 +19,8 @@ defmodule Parser do
       "hjc",
       "sjc",
       "dc",
-      "adc"
+      "adc",
+      "xx"
     ])
   end
 
