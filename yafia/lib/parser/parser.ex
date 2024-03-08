@@ -27,7 +27,14 @@ defmodule Parser do
   @doc """
   Returns a List, that is split along the divider pattern.
   """
-  def split(input_string) when is_binary(input_string) do
-    String.split(input_string, divider(), trim: true)
+  def split(input) when is_binary(input) do
+    String.split(input, divider(), trim: true)
+  end
+
+  @doc """
+  Returns a List split along whitespace.
+  """
+  def split_ws(input) when is_binary(input) do
+    String.split(input, " ", trim: true)
   end
 end
