@@ -1,4 +1,4 @@
-defmodule Directionals do
+defmodule Standards do
   _images = %{"7" => {341,0,55,57},
        "8" =>{396,0,46,67},
        "9" => {444,0,55,57},
