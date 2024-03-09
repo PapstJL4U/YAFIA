@@ -7,10 +7,6 @@ defmodule Images.MoveImage do
 
   import Mogrify
 
-  defp dim(x0, x1, y0, y1) do
-    "#{x1 - x0}" <> "x" <> "#{y1 - y0}" <> "+" <> to_string(x0) <> "+" <> to_string(y0)
-  end
-
   @doc """
   x0 = x origin
   y0 = y origin
@@ -21,12 +17,27 @@ defmodule Images.MoveImage do
     Mogrify.open(path)
     |> custom(
       "crop",
-      crop_input(path, x0, y0, w, h) <> " test.png"
+      crop_input(x0, y0, w, h) <> " output/test.png"
     )
-    |> save
+    |> create(path: ".")
   end
 
-  def crop_input(path, x0, y0, w, h) when is_binary(path) do
+  @doc """
+   x0 = x origin
+   y0 = y origin
+   xw = width
+   yh = heigth
+  """
+  def crop_input(x0, y0, w, h) do
     "#{w}x#{h}" <> "+#{x0}+#{y0}"
+  end
+
+  def sys_crop(path, x0, y0, w, h, index) when is_binary(path) do
+    cmd = "magick"
+    subcmd = "-crop"
+    input = path
+    output = "output/#{index}.png"
+    dim = crop_input(x0, y0, w, h)
+    System.cmd(cmd, [input, subcmd, dim, output])
   end
 end

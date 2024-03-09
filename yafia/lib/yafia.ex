@@ -25,6 +25,10 @@ defmodule Yafia do
   end
 
   def string do
-    MoveImage.crop_input("assets/standard_directionals.png", 0, 0, 55, 56)
+    MoveImage.crop_input(0, 0, 55, 56)
+  end
+
+  def sys do
+    MoveImage.sys_crop("assets/standard_directionals.png", 0, 0, 55, 56, 00)
   end
 end
