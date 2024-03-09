@@ -1,4 +1,4 @@
-defmodule lmhp_lmhk do
+defmodule SixButtons do
   _images = %{
               'd'=> {0,0,78,78},
               'p'=>  {0,0,80,80},
