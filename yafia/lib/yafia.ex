@@ -3,7 +3,6 @@ defmodule Yafia do
   Documentation for `Yafia`.
   """
   alias Images.MoveImage
-  import Mogrify
 
   @doc """
   Hello world.
@@ -26,6 +25,10 @@ defmodule Yafia do
 
   def string do
     MoveImage.crop_input(0, 0, 55, 56)
+  end
+
+  def inputs do
+    StreetFighter.inputs()
   end
 
   def sys do

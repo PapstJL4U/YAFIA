@@ -1,5 +1,6 @@
 defmodule Standards do
-  _images = %{"7" => {341,0,55,57},
+  def info() do
+  images = %{"7" => {341,0,55,57},
        "8" =>{396,0,46,67},
        "9" => {444,0,55,57},
        "4" => {157,0,67,46},
@@ -18,5 +19,6 @@ defmodule Standards do
        "down" =>{55,0,48,67},
        "downright" =>{102,0,54,56}
     }
-  def info(), do: ["assets/standard_directionals.png": _images] 
+  ["assets/standard_directionals.png": images] 
+  end
 end

@@ -2,13 +2,11 @@ defmodule StreetFighter do
   @moduledoc """
   Defines possible inputs for StreetFighter
   """
-  
-import Standards 
-import SixButtons 
-import Extras 
-import Complex
 
-  def Inputs do
-    Standards.info() ++ SixButtons.info()
+  def inputs() do
+    Standards.info()
+    ++ SixButtons.info()
+    ++ Complex.info()
+    ++ Extras.info()
   end
 end
