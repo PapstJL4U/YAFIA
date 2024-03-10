@@ -24,6 +24,6 @@ defmodule Complex do
               "41236"=> {346,0,87,64}
 
   }
-  ["assets/complex_directiobals.png": images] 
+  ["assets/complex_directionals.png": images] 
   end
 end

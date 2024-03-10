@@ -42,17 +42,23 @@ defmodule Yafia do
     MoveImage.sys_crop("assets/standard_directionals.png", 0, 0, 55, 56, 00)
   end
 
-  defp dim({:ok, result}) do
-    {x0, y0, xw, yh} = result
-    # MoveImage.crop_input(x0, y0, xw, yh)
-  end
-
-  defp dim(:error), do: :error
-
   defp find(moves, game) do
     for {img, parts} <- game,
         move <- moves,
-        into: %{},
-        do: dim(Map.fetch(parts, move))
+        Map.has_key?(parts, move),
+        do:
+          (
+            {x0, y0, xw, yh} =
+              Map.fetch!(parts, move)
+
+            MoveImage.sys_crop(
+              Atom.to_string(img),
+              x0,
+              y0,
+              xw,
+              yh,
+              MoveImage.crop_input(x0, y0, xw, yh)
+            )
+          )
   end
 end
