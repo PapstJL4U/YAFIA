@@ -4,7 +4,7 @@ defmodule Parser do
   """
 
   @doc """
-  Returns a pattern that can be used to divide a strings,
+  Returns a pattern (list of dividing symbols) that can be used to divide a strings,
   """
   def divider do
     :binary.compile_pattern([
@@ -25,39 +25,23 @@ defmodule Parser do
   end
 
   @doc """
-  Returns a List, that is split along the divider pattern.
+  Returns a Command list, that is split along the internal Divider pattern.
+  It only contains moves. No Cancels like jc, adc, xx, ...
   """
+  @spec split(String.t()) :: list(String.t())
   def split(input) when is_binary(input) do
     String.split(input, divider(), trim: true)
   end
 
   @doc """
-  Returns a List split along whitespace.
+  Returns a Command list split along whitespace.
   """
+  @spec split_ws(String.t()) :: list(String.t())
   def split_ws(input) when is_binary(input) do
     String.split(input, " ", trim: true)
   end
 
-  def find_old(moves, game) do
-    for {img, parts} <- game,
-        move <- moves,
-        Map.has_key?(parts, move),
-        do:
-          (
-            {x0, y0, xw, yh} =
-              Map.fetch!(parts, move)
-
-            MoveImage.sys_crop(
-              Atom.to_string(img),
-              x0,
-              y0,
-              xw,
-              yh,
-              MoveImage.crop_input(x0, y0, xw, yh)
-            )
-          )
-  end
-
+  @spec find(list(), keyword(), integer()) :: list()
   def find(moves, game, index \\ 1)
   def find(_, [], _), do: IO.puts("Error, No game selected!")
   def find([], _, _), do: []

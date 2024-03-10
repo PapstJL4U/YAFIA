@@ -28,6 +28,7 @@ defmodule Images.MoveImage do
    xw = width
    yh = heigth
   """
+  @spec crop_input(integer(), integer(), integer(), integer()) :: String.t()
   def crop_input(x0, y0, w, h) do
     "#{w}x#{h}" <> "+#{x0}+#{y0}"
   end

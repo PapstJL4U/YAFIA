@@ -41,18 +41,11 @@ defmodule Yafia do
   def recurs do
     inp = "2 mp , 4 mp > hp qcb mk srk 2p"
 
-    m =
-      Parser.split_ws(inp)
-      |> Parser.find(StreetFighter.inputs())
+    Parser.split_ws(inp)
+    |> Parser.find(StreetFighter.inputs())
+    |> IO.puts()
 
-    IO.puts(m)
-
-    for {i, p, c} <- m,
-        do:
-          (
-            {x0, y0, xw, yh} = c
-            MoveImage.sys_crop(Atom.to_string(p), x0, y0, xw, yh, i)
-          )
+    # MoveImage.sys_crop(Atom.to_string(p), x0, y0, xw, yh, i)
   end
 
   def sys do
