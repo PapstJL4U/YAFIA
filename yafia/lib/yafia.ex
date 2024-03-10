@@ -31,18 +31,12 @@ defmodule Yafia do
     StreetFighter.inputs()
   end
 
-  def test do
-    inp = "2 mp , 4 mp > hp qcb mk srk 2p"
-
-    Parser.split_ws(inp)
-    |> Parser.find(StreetFighter.inputs())
-  end
-
   def recurs do
     inp = "2 mp , 4 mp > hp qcb mk srk 2p"
 
     Parser.split_ws(inp)
     |> Parser.find(StreetFighter.inputs())
+    |> List.flatten()
 
     # |> MoveImage.sys_crop()
   end
