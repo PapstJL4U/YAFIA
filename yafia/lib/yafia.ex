@@ -37,7 +37,10 @@ defmodule Yafia do
     Parser.split_ws(inp)
     |> Parser.find(StreetFighter.inputs())
     |> List.flatten()
+    |> Enum.each(fn x -> MoveImage.sys_crop(x) end)
+  end
 
-    # |> MoveImage.sys_crop()
+  def comb do
+    MoveImage.combine()
   end
 end
