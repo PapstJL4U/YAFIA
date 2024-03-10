@@ -1,6 +1,7 @@
-def Images.Magick do
+defmodule Images.ImageMagick do
   import Images.MoveImage
 
+  @spec pad(integer()) :: String.t()
   defp pad(i), do: String.pad_leading("#{i}", 4, "0")
 
   @spec sys_crop({integer(), atom(), {integer(), integer(), integer(), integer()}}) :: any()

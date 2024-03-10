@@ -3,6 +3,7 @@ defmodule Yafia do
   Documentation for `Yafia`.
   """
   alias Images.MoveImage
+  alias Images.ImageMagick
 
   @doc """
   Hello world.
@@ -31,16 +32,16 @@ defmodule Yafia do
     StreetFighter.inputs()
   end
 
-  def recurs do
-    inp = "2 mp , 4 mp > hp qcb mk srk 2p"
-
-    Parser.split_ws(inp)
+  @spec create_im(String.t()) :: any()
+  def create_im(input \\ "2 mp , 4 mp > hp qcb mk srk 2p") do
+    Parser.split_ws(input)
     |> Parser.find(StreetFighter.inputs())
     |> List.flatten()
-    |> Enum.each(fn x -> MoveImage.sys_crop(x) end)
+    |> Enum.each(fn x -> ImageMagick.sys_crop(x) end)
   end
 
-  def comb do
-    MoveImage.combine()
+  @spec combine_im() :: any()
+  def combine_im() do
+    ImageMagick.combine()
   end
 end
