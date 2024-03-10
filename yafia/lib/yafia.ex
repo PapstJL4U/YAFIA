@@ -32,10 +32,14 @@ defmodule Yafia do
     StreetFighter.inputs()
   end
 
-  @spec create_im(String.t()) :: :ok
-  def create_im(input \\ "2 mp , 4 mp > hp qcb mk srk 2p") do
+  def gg() do
+    create_im("2 mp , 4 mp > hp qcb mk srk 2p", GuiltyGearXrd.inputs())
+  end
+
+  @spec create_im(String.t(), list()) :: :ok
+  def create_im(input \\ "2 mp , 4 mp > hp qcb mk srk 2p", game \\ StreetFighter.inputs()) do
     Parser.split_ws(input)
-    |> Parser.find(StreetFighter.inputs())
+    |> Parser.find(game)
     |> List.flatten()
     |> Enum.each(fn x -> ImageMagick.sys_crop(x) end)
   end
