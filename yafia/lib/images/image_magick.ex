@@ -26,6 +26,7 @@ defmodule Images.ImageMagick do
     System.cmd(cmd, [input, subcmd, dim, output])
   end
 
+  @spec combine() :: any()
   def combine() do
     cmd = "magick"
     subcmd = "+append"

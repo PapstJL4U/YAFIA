@@ -32,7 +32,7 @@ defmodule Yafia do
     StreetFighter.inputs()
   end
 
-  @spec create_im(String.t()) :: any()
+  @spec create_im(String.t()) :: :ok
   def create_im(input \\ "2 mp , 4 mp > hp qcb mk srk 2p") do
     Parser.split_ws(input)
     |> Parser.find(StreetFighter.inputs())
