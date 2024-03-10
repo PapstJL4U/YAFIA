@@ -42,7 +42,7 @@ defmodule Parser do
   end
 
   @spec find(list(), keyword(), integer()) :: list()
-  def find(moves, game, index \\ 1)
+  def find(moves, game, index \\ 0)
   def find(_, [], _), do: IO.puts("Error, No game selected!")
   def find([], _, _), do: []
 

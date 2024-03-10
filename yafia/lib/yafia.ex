@@ -23,7 +23,7 @@ defmodule Yafia do
     MoveImage.load_move("assets/standard_directionals.png", 0, 0, 55, 56)
   end
 
-  def string do
+  def ci do
     MoveImage.crop_input(0, 0, 55, 56)
   end
 
@@ -35,7 +35,7 @@ defmodule Yafia do
     inp = "2 mp , 4 mp > hp qcb mk srk 2p"
 
     Parser.split_ws(inp)
-    |> find(StreetFighter.inputs())
+    |> Parser.find(StreetFighter.inputs())
   end
 
   def recurs do
@@ -43,32 +43,7 @@ defmodule Yafia do
 
     Parser.split_ws(inp)
     |> Parser.find(StreetFighter.inputs())
-    |> IO.puts()
 
-    # MoveImage.sys_crop(Atom.to_string(p), x0, y0, xw, yh, i)
-  end
-
-  def sys do
-    MoveImage.sys_crop("assets/standard_directionals.png", 0, 0, 55, 56, 00)
-  end
-
-  defp find(moves, game) do
-    for {img, parts} <- game,
-        move <- moves,
-        Map.has_key?(parts, move),
-        do:
-          (
-            {x0, y0, xw, yh} =
-              Map.fetch!(parts, move)
-
-            MoveImage.sys_crop(
-              Atom.to_string(img),
-              x0,
-              y0,
-              xw,
-              yh,
-              MoveImage.crop_input(x0, y0, xw, yh)
-            )
-          )
+    # |> MoveImage.sys_crop()
   end
 end
