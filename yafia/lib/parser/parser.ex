@@ -58,10 +58,11 @@ defmodule Parser do
           )
   end
 
+  def find(moves, game, index \\ 1)
   def find(_, [], _), do: IO.puts("Error, No game selected!")
   def find([], _, _), do: []
 
-  def find(moves, game, index \\ 1) do
+  def find(moves, game, index) do
     with [move | others] = moves do
       for {img, parts} <- game,
           Map.has_key?(parts, move),
