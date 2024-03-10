@@ -38,6 +38,13 @@ defmodule Yafia do
     |> find(StreetFighter.inputs())
   end
 
+  def recurs do
+    inp = "2 mp , 4 mp > hp qcb mk srk 2p"
+
+    Parser.split_ws(inp)
+    |> Parser.find(StreetFighter.inputs())
+  end
+
   def sys do
     MoveImage.sys_crop("assets/standard_directionals.png", 0, 0, 55, 56, 00)
   end
