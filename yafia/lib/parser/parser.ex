@@ -58,14 +58,14 @@ defmodule Parser do
           )
   end
 
-  def find(_, []), do: IO.puts("Error, No game selected!")
-  def find([], _), do: []
+  def find(_, [], _), do: IO.puts("Error, No game selected!")
+  def find([], _, _), do: []
 
-  def find(moves, game) do
+  def find(moves, game, index \\ 1) do
     with [move | others] = moves do
       for {img, parts} <- game,
           Map.has_key?(parts, move),
-          do: [Map.fetch!(parts, move)] ++ find(others, game)
+          do: [{index, img, Map.fetch!(parts, move)}] ++ find(others, game, index + 1)
     end
   end
 end
