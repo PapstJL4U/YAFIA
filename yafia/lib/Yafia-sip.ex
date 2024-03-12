@@ -22,5 +22,3 @@ defmodule Sip do
     end
   end
 end
-
-Sip.call()
