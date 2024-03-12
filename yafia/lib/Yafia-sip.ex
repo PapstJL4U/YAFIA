@@ -1,9 +1,12 @@
 defmodule Sip do
+  use Application
   alias Yafia
   alias GuiltyGearXrd
   alias StreetFighter
 
-  def main(args) do
+  def start(_type, args) do
+    children = []
+    Supervisor.start_link(children, strategy: :one_for_one)
     [game | combo] = args
     c = Enum.at(combo, 0)
     IO.puts("Decoding...")
