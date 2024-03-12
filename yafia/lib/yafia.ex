@@ -33,14 +33,15 @@ defmodule Yafia do
   end
 
   def gg() do
-    create_im("2 mp , 4 mp > hp qcb mk srk 2p", GuiltyGearXrd.inputs())
+    combo = String.downcase("5 K > 2 S > 5 H > 63214 K ~ H")
+    create_im(combo, GuiltyGearXrd.inputs())
   end
 
   @spec create_im(String.t(), list()) :: :ok
   def create_im(input \\ "2 mp , 4 mp > hp qcb mk srk 2p", game \\ StreetFighter.inputs()) do
     Parser.split_ws(input)
-    |> Parser.find(game)
-    |> List.flatten()
+    |> IO.inspect()
+    |> Parser.find_flat(game)
     |> Enum.each(fn x -> ImageMagick.sys_crop(x) end)
   end
 

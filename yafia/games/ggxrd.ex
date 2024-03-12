@@ -7,8 +7,7 @@ defmodule GuiltyGearXrd do
     Standards.info()
     ++ ArcsysAdditional.info()
     ++ GuiltyGear.info()
-    ++ Complex.info() 
-    ++ Complex.info()
     ++ Extras.info()
+    ++ Complex.info()
   end
 end

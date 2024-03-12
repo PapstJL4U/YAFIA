@@ -41,6 +41,12 @@ defmodule Parser do
     String.split(input, " ", trim: true)
   end
 
+  @spec find_flat(list(), keyword(), integer()) :: list()
+  def find_flat(moves, game, index \\ 0) do
+    find(moves, game, index)
+    |> List.flatten()
+  end
+
   @spec find(list(), keyword(), integer()) :: list()
   def find(moves, game, index \\ 0)
   def find(_, [], _), do: IO.puts("Error, No game selected!")
