@@ -7,6 +7,7 @@ defmodule Yafia.MixProject do
       version: "0.1.0",
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
+      escript: [main_module: Yafia],
       deps: deps(),
       elixirc_paths: ["lib", "assets", "games"]
     ]
@@ -15,7 +16,7 @@ defmodule Yafia.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      # mod: {Sip, []},
+      mod: {Yafia, []},
       extra_applications: [:logger]
     ]
   end
