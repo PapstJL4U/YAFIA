@@ -8,8 +8,8 @@ defmodule Yafia.MixProject do
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       escript: [main_module: Yafia],
-      deps: deps(),
-      elixirc_paths: ["lib", "assets", "games"]
+      elixirc_paths: ["lib", "assets", "games"],
+      deps: deps()
     ]
   end
 

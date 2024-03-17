@@ -2,28 +2,10 @@ defmodule Yafia do
   @moduledoc """
   Documentation for `Yafia`.
   """
-  alias Images.MoveImage
   alias Images.ImageMagick
   use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Yafia.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
-
-  def ci do
-    MoveImage.crop_input(0, 0, 55, 56)
-  end
-
-  def test() do
+  def _test() do
     String.downcase("5 K > 2 S > 5 H > 63214 K ~ H")
     |> Parser.split_ws()
     |> Parser.find(GuiltyGearXrd.inputs())
@@ -48,10 +30,10 @@ defmodule Yafia do
     ImageMagick.combine()
   end
 
-  @spec main(String.t()) :: any()
-  def main(args) when is_binary(args) do
+  @spec main(list(String.t())) :: any()
+  def main(args) do
     IO.puts(args)
-    [game | combo] = ["gg", "5 K > 2 S > 5 H > 63214 K ~ H"]
+    [game | combo] = args
     c = Enum.at(combo, 0)
     IO.puts("Decoding...")
     IO.puts("Game: " <> game)
@@ -71,7 +53,7 @@ defmodule Yafia do
   end
 
   def start(_type, _args) do
-    main("")
+    main(["gg", "5 K > 2 S > 5 H > 63214 K ~ H"])
     children = []
     Supervisor.start_link(children, strategy: :one_for_one)
   end

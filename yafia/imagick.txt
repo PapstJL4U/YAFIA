@@ -1,1 +1,0 @@
-magick assets/standard_directionals.png -crop 55x56+0+0 output/test.png
