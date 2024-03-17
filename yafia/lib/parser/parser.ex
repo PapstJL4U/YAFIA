@@ -41,22 +41,18 @@ defmodule Parser do
     String.split(input, " ", trim: true)
   end
 
-  @spec find_flat(list(), keyword(), integer()) :: list()
-  def find_flat(moves, game, index \\ 0) do
-    find(moves, game, index)
+  @spec find(list(), keyword()) :: list()
+  def find(_, []), do: IO.puts("Error, No game selected!")
+  def find([], _), do: []
+
+  def find(moves, game) do
+    Enum.map(moves, fn x -> map_img(x, game) end)
     |> List.flatten()
   end
 
-  @spec find(list(), keyword(), integer()) :: list()
-  def find(moves, game, index \\ 0)
-  def find(_, [], _), do: IO.puts("Error, No game selected!")
-  def find([], _, _), do: []
-
-  def find(moves, game, index) do
-    with [move | others] = moves do
-      for {img, parts} <- game,
-          Map.has_key?(parts, move),
-          do: [{index, img, Map.fetch!(parts, move)}] ++ find(others, game, index + 1)
-    end
+  defp map_img(move, game) do
+    for {img, parts} <- game,
+        Map.has_key?(parts, move),
+        do: {img, Map.fetch!(parts, move)}
   end
 end
