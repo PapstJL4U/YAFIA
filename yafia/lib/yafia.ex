@@ -3,7 +3,6 @@ defmodule Yafia do
   Documentation for `Yafia`.
   """
   alias Images.ImageMagick
-  use Application
 
   def _test() do
     String.downcase("5 K > 2 S > 5 H > 63214 K ~ H")
@@ -32,7 +31,6 @@ defmodule Yafia do
 
   @spec main(list(String.t())) :: any()
   def main(args) do
-    IO.puts(args)
     [game | combo] = args
     c = Enum.at(combo, 0)
     IO.puts("Decoding...")
@@ -50,11 +48,5 @@ defmodule Yafia do
       "sf" -> StreetFighter.inputs()
       _ -> System.stop(1)
     end
-  end
-
-  def start(_type, _args) do
-    main(["gg", "5 K > 2 S > 5 H > 63214 K ~ H"])
-    children = []
-    Supervisor.start_link(children, strategy: :one_for_one)
   end
 end

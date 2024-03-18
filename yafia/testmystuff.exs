@@ -1,1 +1,0 @@
-Yafia.example()

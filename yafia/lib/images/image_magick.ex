@@ -5,6 +5,8 @@ defmodule Images.ImageMagick do
   defp pad(i), do: String.pad_leading("#{i}", 4, "0")
 
   @spec sys_crop({{atom(), {integer(), integer(), integer(), integer()}}, integer()}) :: any()
+  def sys_crop({{_, {}}, _}), do: IO.puts("Error: No valid Input")
+
   def sys_crop({{path, {x0, y0, xw, yh}}, index}) do
     sys_crop_p(Atom.to_string(path), x0, y0, xw, yh, index)
   end
