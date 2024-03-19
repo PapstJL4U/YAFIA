@@ -47,6 +47,7 @@ defmodule Yafia do
       "gg" -> GuiltyGearXrd.inputs()
       "sf" -> StreetFighter.inputs()
       "bbt" -> BBCrossTag.inputs()
+      "ggm" -> GuiltyGearModern.inputs()
       _ -> System.stop(1)
     end
   end
