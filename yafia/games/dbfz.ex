@@ -1,4 +1,4 @@
-defmodule GuiltyGearModern do
+defmodule DragonballFighterz do
   @moduledoc """
   Defines possible inputs for GuiltyGear
   """
@@ -6,7 +6,6 @@ defmodule GuiltyGearModern do
   def inputs() do
     Standards.inputs()
     ++ ArcsysAdditional.inputs()
-    ++ GuiltyGearM.inputs()
     ++ Extras.inputs()
     ++ Complex.inputs()
   end

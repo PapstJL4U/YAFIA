@@ -7,7 +7,7 @@ defmodule Extras do
         "~"=> {101,0,36,18},
         "+"=> {101,19,36,36}
     }
-  ["assets/bbtag.png": images] 
+  ["assets/extra_notations.png": images] 
 
   end
 end

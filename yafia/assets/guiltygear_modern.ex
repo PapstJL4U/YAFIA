@@ -1,4 +1,4 @@
-defmodule GuiltyGearModern do
+defmodule GuiltyGearM do
   def inputs() do
   images = %{
              "p"=> {0, 0, 72, 72},
