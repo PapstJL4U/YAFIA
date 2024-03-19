@@ -1,4 +1,4 @@
-defmodule GuiltyGearXrd do
+defmodule BBCrossTag do
   @moduledoc """
   Defines possible inputs for GuiltyGear
   """
@@ -6,7 +6,7 @@ defmodule GuiltyGearXrd do
   def inputs() do
     Standards.inputs()
     ++ ArcsysAdditional.inputs()
-    ++ GuiltyGear.inputs()
+    ++ BBTag.inputs()
     ++ Extras.inputs()
     ++ Complex.inputs()
   end

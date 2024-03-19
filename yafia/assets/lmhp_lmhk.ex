@@ -1,5 +1,5 @@
 defmodule SixButtons do
-  def info() do
+  def inputs() do
   images = %{
               "d"=> {0,0,78,78},
               "p"=>  {0,0,80,80},

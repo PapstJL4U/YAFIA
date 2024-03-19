@@ -46,6 +46,7 @@ defmodule Yafia do
     case game do
       "gg" -> GuiltyGearXrd.inputs()
       "sf" -> StreetFighter.inputs()
+      "bbt" -> BBCrossTag.inputs()
       _ -> System.stop(1)
     end
   end

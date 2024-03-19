@@ -1,9 +1,12 @@
 defmodule Complex do
 
-  def info() do
+  def inputs() do
   images = %{
+              
+              "[2]"=> {0,0,46,81},
               "chargedown"=> {0,0,46,81},
               "chargeback" =>{107,0,81,46},
+              "[4]" =>{107,0,81,46},
               "dash"=> {189,0,69,46},
               "srk"=> {47,0,59,66},
               "rsrk"=> {575,0,59,66},

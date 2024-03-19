@@ -1,5 +1,5 @@
 defmodule ArcsysAdditional do
-  def info() do
+  def inputs() do
   images = %{
     "j."=> {0,0,53,43},
     "j"=> {0,0,53,43},

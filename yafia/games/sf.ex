@@ -4,9 +4,9 @@ defmodule StreetFighter do
   """
 
   def inputs() do
-    Standards.info()
-    ++ SixButtons.info()
-    ++ Complex.info()
-    ++ Extras.info()
+    Standards.inputs()
+    ++ SixButtons.inputs()
+    ++ Complex.inputs()
+    ++ Extras.inputs()
   end
 end
