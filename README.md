@@ -8,7 +8,9 @@ How to use:
 
 1) use yafia (no file ending) with "yafia gg "2 k , 5 k"
 
+or 
+
 2) use Yafia.bat with "Yafia.bat gg "2 k , 5 k"
 
 You currently need whitespace between directional, buttons and cancels.
-Supported games: Guilty Gear, BBTag, Street Fighter
+Supported games: Guilty Gear(gg), Guilty Gear Modern (ggm), BBTag(bbt), Street Fighter (sf)
