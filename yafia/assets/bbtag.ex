@@ -1,4 +1,7 @@
 defmodule BBTag do
+  @moduledoc """
+  Describes the mapping for the Buttons A, B, C, D and P
+  """
   def inputs() do
   images = %{
     "a"=> {0, 0, 84, 83},

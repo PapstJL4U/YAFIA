@@ -1,4 +1,7 @@
 defmodule ArcsysAdditional do
+  @moduledoc """
+  Describes jump cancels: with and without dot notation.
+  """
   def inputs() do
   images = %{
     "j."=> {0,0,53,43},

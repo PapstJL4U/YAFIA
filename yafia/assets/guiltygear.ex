@@ -1,4 +1,7 @@
 defmodule GuiltyGear do
+  @moduledoc """
+  Mapps P, K, S, c.S, HS and Dust
+  """
   def inputs() do
   images = %{
               "p"=> {0, 0, 78, 78},

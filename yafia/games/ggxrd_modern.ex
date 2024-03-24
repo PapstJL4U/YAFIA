@@ -1,6 +1,6 @@
 defmodule GuiltyGearModern do
   @moduledoc """
-  Defines possible inputs for GuiltyGear
+  Defines possible inputs for Guilty Gear Xrd with "modern|metal" design.
   """
 
   def inputs() do

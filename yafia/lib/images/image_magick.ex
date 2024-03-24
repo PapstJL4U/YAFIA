@@ -1,9 +1,17 @@
 defmodule Images.ImageMagick do
+  @moduledoc """
+  Functions to to crop a larger File with ImageMagick and combine multiple Images.
+  Uses the 'System.cmd()' command.
+  """
   import Images.MoveImage
 
   @spec pad(integer()) :: String.t()
   defp pad(i), do: String.pad_leading("#{i}", 4, "0")
 
+  @doc """
+  Crops an image and saves it under
+  "output/yafia-'index'.png"
+  """
   @spec sys_crop({{atom(), {integer(), integer(), integer(), integer()}}, integer()}) :: any()
   def sys_crop({{_, {}}, _}), do: IO.puts("Error: No valid Input")
 
@@ -28,6 +36,10 @@ defmodule Images.ImageMagick do
     System.cmd(cmd, [input, subcmd, dim, output])
   end
 
+  @doc """
+  Combines all iages in the directory output
+  with the file name yafia-*.png
+  """
   @spec combine() :: any()
   def combine() do
     cmd = "magick"

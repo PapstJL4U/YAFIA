@@ -1,4 +1,7 @@
 defmodule SixButtons do
+  @moduledoc """
+  Mapping for Street fighter Buttons.
+  """
   def inputs() do
   images = %{
               "d"=> {0,0,78,78},

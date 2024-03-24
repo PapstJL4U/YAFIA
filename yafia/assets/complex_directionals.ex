@@ -1,5 +1,7 @@
 defmodule Complex do
-
+@moduledoc """
+The mapping for complex directionals like halfcircles, srk and charge motions.
+"""
   def inputs() do
   images = %{
               

@@ -1,4 +1,7 @@
 defmodule General_Special do
+  @moduledoc """
+  Legacy Module
+  """
   def inputs() do
   images = %{
               "d"=> {0,0,78,78},

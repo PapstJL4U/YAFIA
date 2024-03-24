@@ -1,7 +1,7 @@
 defmodule Images.MoveImage do
   @moduledoc """
   Loads parts of an image.
-  This part defined by a square is part of the whole image, but
+  This part, defined by a square, is part of the whole image, but
   represents a single input like DP, HCF, downforward, -> 
   """
 

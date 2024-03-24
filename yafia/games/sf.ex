@@ -1,6 +1,6 @@
 defmodule StreetFighter do
   @moduledoc """
-  Defines possible inputs for StreetFighter
+  Defines possible inputs for Street Fighter
   """
 
   def inputs() do

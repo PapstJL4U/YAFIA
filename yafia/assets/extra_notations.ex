@@ -1,4 +1,7 @@
 defmodule Extras do
+  @moduledoc """
+  Mapping for different, general concel or link options.
+  """
   def inputs() do
   images = %{
         ">"=> {0,0,33,51},

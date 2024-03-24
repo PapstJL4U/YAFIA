@@ -1,6 +1,6 @@
 defmodule BBCrossTag do
   @moduledoc """
-  Defines possible inputs for GuiltyGear
+  Defines possible inputs for BlazBlue Cross Tag Battle 
   """
 
   def inputs() do

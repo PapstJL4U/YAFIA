@@ -41,6 +41,11 @@ defmodule Parser do
     String.split(input, " ", trim: true)
   end
 
+  @doc """
+  Find the image coordinates and the crop parameters
+  for the moves.
+  Returns a list with image path and crop coordinates
+  """
   @spec find(list(), keyword()) :: list()
   def find(_, []), do: IO.puts("Error, No game selected!")
   def find([], _), do: []

@@ -12,6 +12,9 @@ defmodule Yafia do
     |> Enum.each(fn x -> ImageMagick.sys_crop(x) end)
   end
 
+  @doc """
+  Creates one image per "input" from the input string.
+  """
   @spec create_im(String.t(), list()) :: :ok
   def create_im(input \\ "2 mp , 4 mp > hp qcb mk srk 2p", game \\ StreetFighter.inputs())
   def create_im("", _), do: IO.puts("Error: No Input-String.")
@@ -29,6 +32,9 @@ defmodule Yafia do
     ImageMagick.combine()
   end
 
+  @doc """
+  Entry point for the command line usage.
+  """
   @spec main(list(String.t())) :: any()
   def main(args) do
     [game | combo] = args

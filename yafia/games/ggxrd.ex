@@ -1,6 +1,6 @@
 defmodule GuiltyGearXrd do
   @moduledoc """
-  Defines possible inputs for GuiltyGear
+  Defines possible inputs for standard Guilty Gear inputs.
   """
 
   def inputs() do

@@ -1,4 +1,7 @@
 defmodule Standards do
+  @moduledoc """
+  Mapping for standard directionals like Up, Down or NumPad Notation.
+  """
   def inputs() do
   images = %{"7" => {341,0,55,57},
        "8" =>{396,0,46,67},
