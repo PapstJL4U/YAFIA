@@ -21,7 +21,7 @@ defmodule Yafia do
 
   def create_im(input, game) do
     String.downcase(input)
-    |> Parser.split_ws()
+    |> Parser.split(:div)
     |> Parser.find(game)
     |> Enum.with_index(1)
     |> Enum.each(fn x -> ImageMagick.sys_crop(x) end)
