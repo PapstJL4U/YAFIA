@@ -24,7 +24,7 @@ defmodule Parser do
   end
 
   def regex_pattern do
-    ~r/[>,]|(->)|~|(dl.)|(delayed)|(dl)|(jc)|(hjc)|(sjc)|(dc)|(adc)|(xx)]/
+    ~r/\d+|[>,]|(->)|~|(dl\.*)|(delayed)|(jc*\.*)|(hjc\.*)|(sjc\.*)|(dc\.*)|(adc\.*)|(xx)|[a-zA-Z]/
   end
 
   @doc """
@@ -68,6 +68,9 @@ defmodule Parser do
   def split_reg(input) when is_binary(input) do
     Regex.split(regex_pattern(), input, on: :all, trim: true, include_captures: true)
     |> Enum.map(&String.trim(&1))
+    |> Enum.filter(fn x -> String.length(x) != 0 end)
+    |> Enum.map(&String.trim(&1, "."))
+    |> Enum.map(&String.downcase(&1))
   end
 
   @doc """
