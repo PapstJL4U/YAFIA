@@ -63,7 +63,7 @@ defmodule Parser do
   end
 
   @doc """
-  Returns a Command list split along whitespace.
+  Returns a Command list split via regex 
   """
   def split_reg(input) when is_binary(input) do
     Regex.split(regex_pattern(), input, on: :all, trim: true, include_captures: true)
