@@ -3,6 +3,7 @@ defmodule Yafia do
   Documentation for `Yafia`.
   """
   alias Images.ImageMagick
+  require Logger
 
   def _test() do
     String.downcase("5 K > 2 S > 5 H > 63214 K ~ H")
@@ -40,8 +41,8 @@ defmodule Yafia do
     [game | combo] = args
     c = Enum.at(combo, 0)
     IO.puts("Decoding...")
-    IO.puts("Game: " <> game)
-    IO.puts("Combo: " <> c)
+    Logger.info("Combo: " <> c)
+    Logger.info("Game: " <> game)
     g = get_game(game)
     Yafia.create_im(c, g)
     Yafia.combine_im()
