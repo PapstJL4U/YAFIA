@@ -4,7 +4,7 @@
 # documentation.
 
 name: Elixir CI
-on: push
+on: workflow_dispatch
 
 jobs:
   Escript-Build:
