@@ -20,7 +20,9 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-          working-directory: ./yafia 
       - run: mix deps.get
+        working-directory: ./yafia 
       - run: mix test
+        working-directory: ./yafia 
       - run: mix escript.build
+        working-directory: ./yafia 
