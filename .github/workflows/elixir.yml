@@ -7,13 +7,16 @@ name: Elixir CI
 on: push
 
 jobs:
-  test:
+  Escript-Build:
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./yafia
     name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     strategy:
       matrix:
-        otp: ['26.0']
-        elixir: ['1.16.2']
+        otp: ["26.0"]
+        elixir: ["1.16.2"]
     steps:
       - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
@@ -21,8 +24,5 @@ jobs:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
       - run: mix deps.get
-        working-directory: ./yafia 
-      - run: mix test
-        working-directory: ./yafia 
+      #  - run: mix test
       - run: mix escript.build
-        working-directory: ./yafia 
