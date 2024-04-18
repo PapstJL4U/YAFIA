@@ -15,12 +15,12 @@ jobs:
         otp: ['26.0']
         elixir: ['1.16.2']
     steps:
+      - working-directory: ./yafia 
       - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - working-directory: ./yafia 
       - run: mix deps.get
       - run: mix test
       - run: mix escript.build
